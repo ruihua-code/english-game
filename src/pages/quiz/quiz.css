@@ -1,0 +1,7 @@
+.quiz-card { padding: 26px; }
+.quiz-card .status { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.quiz-card .status .badge:last-child { justify-self: end; }
+.question-instruction { margin: -6px 0 16px; color: var(--muted); font-size: 14px; }
+.quiz-actions { display: flex; justify-content: space-between; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.quiz-actions button { min-width: 132px; }
+@media (max-width: 720px) { .quiz-card { padding: 16px; }.quiz-card .status { display: flex; }.quiz-actions button { min-width: 0; } }
