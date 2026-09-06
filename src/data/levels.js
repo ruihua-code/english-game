@@ -1,4 +1,12 @@
-const question = (q, correct, wrong, explain) => ({ q, options: [correct, ...wrong], answer: 0, explain });
+const question = (q, correct, wrong, explain) => {
+  const options = [correct, ...wrong];
+  for (let index = options.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [options[index], options[swapIndex]] = [options[swapIndex], options[index]];
+  }
+  const answer = options.indexOf(correct);
+  return { q, options, answer, explain };
+};
 const beExplain = "先看主语：I 用 am；he/she/it 和单数名词用 is；you/we/they 和复数名词用 are。";
 const doExplain = "一般现在时中，第三人称单数用 does；I/you/we/they 用 do；does 后动词用原形。";
 const articleExplain = "a 用在辅音音素前，an 用在元音音素前；特指或独一无二的事物常用 the。";
